@@ -49,6 +49,46 @@
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
@@ -99,6 +139,22 @@
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
 \makeatletter
 \makeatother
 \makeatletter
@@ -168,12 +224,20 @@
   pdfcreator={LaTeX via pandoc}}
 
 \title{Вступ до програмування в R}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Матеріали для студентів спеціальності економічна кібернетика,
+1 курс}
 \author{Юрій Клебан}
-\date{11/1/2022}
+\date{12/05/2022}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, boxrule=0pt, enhanced, frame hidden, sharp corners, borderline west={3pt}{0pt}{shadecolor}, breakable]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, interior hidden, boxrule=0pt, enhanced, borderline west={3pt}{0pt}{shadecolor}, sharp corners, frame hidden]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Зміст}
 {
@@ -183,47 +247,424 @@
 }
 \bookmarksetup{startatroot}
 
-\hypertarget{my-document}{%
-\chapter{My document}\label{my-document}}
+\hypertarget{ux43fux440ux43e-ux43aux443ux440ux441}{%
+\chapter*{Про курс}\label{ux43fux440ux43e-ux43aux443ux440ux441}}
+\addcontentsline{toc}{chapter}{Про курс}
 
-This is a Quarto book.
+Юрій Клебан\\
+30.10.2022
 
-\hypertarget{yeah}{%
-\section{Yeah}\label{yeah}}
+\hfill\break
 
-To learn more about Quarto books visit
-\url{https://quarto.org/docs/books}.
+\begin{figure}
+
+{\centering 
+
+\href{https://www.python.org/}{\includegraphics{http://ForTheBadge.com/images/badges/made-with-python.svg}}
+
+}
+
+\caption{forthebadge made-with-python}
+
+\end{figure}
+
+\begin{figure}
+
+{\centering 
+
+\href{https://www.python.org/}{\includegraphics{http://ForTheBadge.com/images/badges/made-with-python.svg}}
+
+}
+
+\caption{forthebadge made-with-r}
+
+\end{figure}
+
+\begin{figure}
+
+{\centering 
+
+\href{http://commonmark.org}{\includegraphics{https://img.shields.io/badge/Made\%20with-Markdown-1f425f.svg}}
+
+}
+
+\caption{made-with-md}
+
+\end{figure}
+
+\begin{figure}
+
+{\centering 
+
+\href{https://www.mathjax.org/}{\includegraphics{https://img.shields.io/badge/Made\%20with-MathJax-1f425f.svg}}
+
+}
+
+\caption{made-with-mathjax}
+
+\end{figure}
+
+\begin{figure}
+
+{\centering 
+
+\href{https://GitHub.com/Naereen/StrapDown.js/commit/}{\includegraphics{https://badgen.net/github/commits/Naereen/Strapdown.js}}
+
+}
+
+\caption{GitHub commits}
+
+\end{figure}
+
+(n.d.)
+
+Матеріали підготовлені для читання курсу \textbf{\emph{``Вступ до
+програмування в R''}} \texttt{{[}05.250{]}} для студентів 1-го року
+навчання, спеціальності економічна кібернетика.
+
+\hypertarget{ux43eux43fux438ux441-ux43dux430ux432ux447ux430ux43bux44cux43dux43eux457-ux434ux438ux441ux446ux438ux43fux43bux456ux43dux438}{%
+\section*{Опис навчальної
+дисципліни}\label{ux43eux43fux438ux441-ux43dux430ux432ux447ux430ux43bux44cux43dux43eux457-ux434ux438ux441ux446ux438ux43fux43bux456ux43dux438}}
+\addcontentsline{toc}{section}{Опис навчальної дисципліни}
+
+Навчальна дисципліна спрямована на вивчення основ практичного
+застосування популярної мови R для проведення статистичних досліджень в
+економіці.
+
+У процесі вивчення курсу розглядаються теми, що стосуються теоретичних
+основ та практичної реалізації алгоритмів завантаження, підготовки та
+обробки економічних даних.
+
+Місце навчальної дисципліни у підготовці здобувачів: програмні
+результати дисципліни використовуються під час вивчення таких навчальних
+дисциплін: ``Алгоритми та структури даних'', ``Аналіз даних в R'',
+``Прикладне математичне моделювання в R''. Закріплення на практиці
+здобутих програмних результатів відбувається під час проходження
+Навчальної практики з курсу «Економіко-математичне моделювання».
+
+\hypertarget{ux43cux435ux442ux430-ux434ux438ux441ux446ux438ux43fux43bux456ux43dux438}{%
+\section*{Мета
+дисципліни}\label{ux43cux435ux442ux430-ux434ux438ux441ux446ux438ux43fux43bux456ux43dux438}}
+\addcontentsline{toc}{section}{Мета дисципліни}
+
+Мета навчальної дисципліни -- формування у студентів теоретичних знань
+та практичних навичок використання мови програмування R для роботи з
+даними та базовими структурами мови (типи даних, розгалуження, цикли,
+функції).
+
+\hypertarget{ux434ux43eux442ux440ux438ux43cux430ux43dux43dux44f-ux43fux440ux438ux43dux446ux438ux43fux456ux432-ux434ux43eux431ux440ux43eux447ux435ux441ux43dux43eux441ux442ux456}{%
+\section*{Дотримання принципів
+доброчесності}\label{ux434ux43eux442ux440ux438ux43cux430ux43dux43dux44f-ux43fux440ux438ux43dux446ux438ux43fux456ux432-ux434ux43eux431ux440ux43eux447ux435ux441ux43dux43eux441ux442ux456}}
+\addcontentsline{toc}{section}{Дотримання принципів доброчесності}
+
+Викладач та слухач цього курсу, як очікується, повинні дотримуватися
+Кодексу академічної доброчесності університету:
+
+\begin{itemize}
+\item[$\boxtimes$]
+  будь-яка робота, подана здобувачем протягом курсу, має бути його
+  власною роботою здобувача; не вдаватися до кроків, що можуть нечесно
+  покращити Ваші результати чи погіршити/покращити результати інших
+  здобувачів;
+\item[$\boxtimes$]
+  якщо буде виявлено ознаки плагіату або іншої недобросовісної
+  академічної поведінки, то студент буде позбавлений можливості отримати
+  передбачені бали за завдання;
+\item[$\boxtimes$]
+  не публікувати у відкритому доступі відповіді на запитання, що
+  використовуються в рамках курсу для оцінювання знань здобувачів;
+\item[$\boxtimes$]
+  під час фінальних видів контролю необхідно працювати самостійно; не
+  дозволяється говорити або обговорювати, а також не можна копіювати
+  документи, використовувати електронні засоби отримання інформації.
+\end{itemize}
+
+Порушення академічної доброчесності під час виконання контрольних
+завдань призведе до втрати балів або вживання заходів, які передбачені
+Кодексу академічної доброчесності НаУОА.
+
+\hypertarget{ux437ux43cux456ux441ux442}{%
+\section*{Зміст}\label{ux437ux43cux456ux441ux442}}
+\addcontentsline{toc}{section}{Зміст}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux437ux43cux456ux441ux442-1}{%
+\section*{Зміст}\label{ux437ux43cux456ux441ux442-1}}
+\addcontentsline{toc}{section}{Зміст}
+
+\protect\hyperlink{ux43fux440ux43e-ux43aux443ux440ux441}{Про курс}
+
+\protect\hyperlink{ux432ux441ux442ux443ux43f}{Вступ}
+
+\protect\hyperlink{ux441ux43fux438ux441ux43eux43a-ux432ux438ux43aux43eux440ux438ux441ux442ux430ux43dux438ux445-ux434ux436ux435ux440ux435ux43b}{Список
+використаних джерел}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{ux43fux456ux434ux442ux440ux438ux43cux43aux430-ux43aux443ux440ux441ux443}{%
+\section*{Підтримка
+курсу}\label{ux43fux456ux434ux442ux440ux438ux43cux43aux430-ux43aux443ux440ux441ux443}}
+\addcontentsline{toc}{section}{Підтримка курсу}
+
+Курс створено у межах проекту ``Підготовка, обробка та ефективне
+використання даних для наукових досліджень (на основі R)'', що підтримує
+Європейський союз за програмою
+\href{https://houseofeurope.org.ua/}{House of Europe}.
+
+logo house of europe / logo moving forvard together
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, rightrule=.15mm, breakable, colframe=quarto-callout-note-color-frame, toprule=.15mm, leftrule=.75mm, bottomrule=.15mm, left=2mm, opacityback=0]
+\begin{minipage}[t]{5.5mm}
+\textcolor{quarto-callout-note-color}{\faInfo}
+\end{minipage}%
+\begin{minipage}[t]{\textwidth - 5.5mm}
+
+Матеріали курсу створені з використанням ряду технологій:
+
+\begin{itemize}
+\item[$\boxtimes$]
+  \href{https://www.r-project.org}{\texttt{R} Language} - безкоштована
+  мова програмування для виконання досліджень у сфері статистики,
+  машинного навчання та візуалізацї результатів.
+\item[$\boxtimes$]
+  \href{https://quarto.org}{\texttt{Quarto} Book} - система для
+  публікації наукових та технічних текстів з відкритим кодом
+  (\texttt{R}/\texttt{Python}/\texttt{Julia}/\texttt{Observable}).
+\item[$\boxtimes$]
+  \href{https://github.com/jupyterlab/jupyterlab}{\texttt{JupyterLab}} -
+  середовище розробки на основі
+  \href{https://jupyter.org/}{\texttt{Jupyter\ Notebook}}.
+  \texttt{JupyterLab} є розширеним веб-інтерфейсом для роботи з
+  ноутбуками.
+\item[$\boxtimes$]
+  \texttt{Git}/\texttt{Github} - система контролю версій та, відповідно,
+  сервіс для організації зберігання коду, а також публікації статичних
+  сторінок.
+\end{itemize}
+
+\end{minipage}%
+\end{tcolorbox}
 
 \bookmarksetup{startatroot}
 
-\hypertarget{introduction}{%
-\chapter{Introduction}\label{introduction}}
+\hypertarget{ux432ux441ux442ux443ux43f}{%
+\chapter*{Вступ}\label{ux432ux441ux442ux443ux43f}}
+\addcontentsline{toc}{chapter}{Вступ}
 
-This is a book created from markdown and executable code.
+Юрій Клебан\\
+30.10.2022
 
-\hypertarget{yio}{%
-\section{Yio!}\label{yio}}
+\hfill\break
 
-See Knuth (1984) for additional discussion of literate programming.
+Фахівці спеціальності економічна кібернетика у майбутньому працюватимуть
+з великими масивами даних, що накопичуються велизними темпами у даний
+момент і збиралися у попередні дисятиліття. Підготовка, обробка і
+трансформація даних у зручний формат прийняття рішень забирає все більше
+часу, а звичні рашіне інструменти аналізу даних, як наприклад,
+\texttt{Microsoft\ Excel} не мають достатньо вбудованих можливостей для
+виконнання задач бізнесу.
+
+На даний час існує велика кількість мов програмування, що інтегруються у
+суспільні сфери діяльності людини та роботи технічних систем:
+біоінформатика, а також економіка та бізнес.
+
+Однією з мов програмування, що отримали широке поишення серед
+економістів-науковців, аналітиків та практиків математичного моделювання
+(\texttt{machine\ learning}) є мова програмування \texttt{(R)}(n.d.).
+Свою популярність ця мова програмування здобула завдяки простоті у
+використанні, доступності (безкоштовні як базові компоненти для
+написання коду, так і середовища розробки), розширюваності (кожен
+розробник має можливість створювати власні пакети та публікувати їх у
+відкритому доступі).
+
+Основними задачами курсу ``Вступ до прграмування в R'' є ознайомлення
+студентів з базовми конструкціями мови програмування R, вивчення
+способів роботи з найпоширенішими типами даних,
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\part{Основи роботи в R}
+
+\hypertarget{ux449ux43e-ux442ux430ux43aux435-r}{%
+\chapter{Що таке R?}\label{ux449ux43e-ux442ux430ux43aux435-r}}
+
+Юрій Клебан\\
+30/11/2022
+
+\hfill\break
+
+R є поширеною мовою програмування для роботи з даними
+(\texttt{DataScience}) та машинного навчання
+(\texttt{Machine\ Learning}). Але Ви можете скористатися засобами
+\texttt{R} і для простіших задач: обчислення, візуалізація даних.
+
+Синтаксис мови програмування R є досить простим для вивчення та
+використання, а широкий набір готових пакетів дозволяє використати
+готові розробки для виіршення широкого спектру задач від статистичних
+обчислень до навчання нейронних мереж для розпізнавання/класифікації
+зображень.
+
+Важливо відмітити, що мова програмування R є безкоштовною
+(\texttt{free}) і має відкритий код (\texttt{open\ source}).
+
+R має ряд корисних властивостей, серед яких варто виділити:
+
+\begin{itemize}
+\item
+  \textbf{Візуалізація даних}. Побудова різноманітих видів графіків,
+  робота з мапами, широкий спектр бібліотек та налаштувань до них.
+\item
+  \textbf{Повторне використання коду}. На відміну від електронних
+  таблиць, що мають обмеження на кількість спостережень (наприклад, MS
+  Excel), R дозволяє працювати з великими масивами даних та
+  перезапускати обчислення у потрібний момент не створюючи додаткових
+  копій даних.
+\item
+  \textbf{Машинне навчання}. R дозволяє використати для побудови,
+  навчання та тестування моделей, а також оптимізації гіперпараметрів та
+  відбору факторів дуже велику кількість алгоритмів. Існують також
+  спеціальні пакети, що об'єднують у собі усі описані функції та
+  алгоритми, наприклад, \texttt{caret} та \texttt{mlr}.
+\item
+  \textbf{Автоматизація}. Написаний код та проекти можна перетворити у
+  готові до публікації та впровадження продукти (deployment) або
+  використовувати напрацьовані алгоритми для швидкого вирішення схожих
+  задач (pipeline).
+\end{itemize}
+
+Також можна виділити досить корисні фічі \textbf{Розробка
+веб-застосунків} та \textbf{Звітність}, адже, використовуючи спеціальні
+бібліотеки (\texttt{shiny}, \texttt{shinydashboard},
+\texttt{flexdashboard}, \texttt{rmarkdown}, \texttt{knitr} тощо),
+результати виконаної роботи можна ``оживити'' або сформувати ``на
+льоту'' готові до презентації документи.
+
+\hypertarget{ux43aux43eux440ux43eux442ux43aux430-ux456ux441ux442ux43eux440ux456ux44f-ux43cux438ux43eux432ux438-r}{%
+\chapter{Коротка історія миови
+R}\label{ux43aux43eux440ux43eux442ux43aux430-ux456ux441ux442ux43eux440ux456ux44f-ux43cux438ux43eux432ux438-r}}
+
+Юрій Клебан\\
+30/11/2022
+
+\hfill\break
+
+\hypertarget{ux432cux442ux430ux43dux43eux432ux43bux435ux43dux43dux44f-ux442ux430-ux43dux430ux43bux430ux448ux442ux443ux432ux430ux43dux43dux44f-r}{%
+\chapter{Вcтановлення та налаштування
+R}\label{ux432cux442ux430ux43dux43eux432ux43bux435ux43dux43dux44f-ux442ux430-ux43dux430ux43bux430ux448ux442ux443ux432ux430ux43dux43dux44f-r}}
+
+Юрій Клебан\\
+30/11/2022
+
+\hfill\break
+
+\hypertarget{ux434ux43eux43aux443ux43cux435ux43dux442ux430ux446ux456ux44f-ux442ux430-ux434ux43eux43fux43eux43cux43eux433ux430}{%
+\chapter{Документація та
+допомога}\label{ux434ux43eux43aux443ux43cux435ux43dux442ux430ux446ux456ux44f-ux442ux430-ux434ux43eux43fux43eux43cux43eux433ux430}}
+
+Юрій Клебан\\
+30/11/2022
+
+\hfill\break
+
+\hypertarget{ux440ux43eux431ux43eux442ux430-ux437-ux43fux430ux43aux435ux442ux430ux43cux438}{%
+\chapter{Робота з
+пакетами}\label{ux440ux43eux431ux43eux442ux430-ux437-ux43fux430ux43aux435ux442ux430ux43cux438}}
+
+Юрій Клебан\\
+30/11/2022
+
+\hfill\break
+
+\part{Базовий синтаксис R}
+
+\hypertarget{ux437ux43cux456ux43dux43dux456}{%
+\chapter{Змінні}\label{ux437ux43cux456ux43dux43dux456}}
+
+Юрій Клебан\\
+30/11/2022
+
+\hfill\break
+
+\hypertarget{ux431ux430ux437ux43eux432ux456-ux442ux438ux43fux438-ux434ux430ux43dux438ux445}{%
+\chapter{Базові типи
+даних}\label{ux431ux430ux437ux43eux432ux456-ux442ux438ux43fux438-ux434ux430ux43dux438ux445}}
+
+Юрій Клебан\\
+30/11/2022
+
+\hfill\break
+
+\hypertarget{ux43eux43fux435ux440ux430ux442ux43eux440ux438}{%
+\chapter{Оператори}\label{ux43eux43fux435ux440ux430ux442ux43eux440ux438}}
+
+Юрій Клебан\\
+30/11/2022
+
+\hfill\break
+
+\hypertarget{ux43aux43eux440ux438ux441ux43dux456-ux43cux430ux442ux435ux43cux430ux442ux438ux447ux43dux456-ux444ux443ux43dux43aux446ux456ux457}{%
+\chapter{Корисні математичні
+функції}\label{ux43aux43eux440ux438ux441ux43dux456-ux43cux430ux442ux435ux43cux430ux442ux438ux447ux43dux456-ux444ux443ux43dux43aux446ux456ux457}}
+
+Юрій Клебан\\
+30/11/2022
+
+\hfill\break
+
+\hypertarget{ux441ux442ux432ux43eux440ux435ux43dux43dux44f-ux444ux443ux43dux43aux446ux456ux457}{%
+\chapter{Створення
+функції}\label{ux441ux442ux432ux43eux440ux435ux43dux43dux44f-ux444ux443ux43dux43aux446ux456ux457}}
+
+Юрій Клебан\\
+30/11/2022
+
+\hfill\break
+
+\part{Робота з даними у R}
+
+\hypertarget{ux432ux435ux43aux442ux43eux440ux438}{%
+\chapter{Вектори}\label{ux432ux435ux43aux442ux43eux440ux438}}
+
+Юрій Клебан\\
+30/11/2022
+
+\hfill\break
+
+\hypertarget{ux434ux430ux442ux430-ux444ux440ux435ux439ux43cux438}{%
+\chapter{Дата-фрейми}\label{ux434ux430ux442ux430-ux444ux440ux435ux439ux43cux438}}
+
+Юрій Клебан\\
+30/11/2022
+
+\hfill\break
+
+\hypertarget{ux441ux43fux438ux441ux43aux438}{%
+\chapter{Списки}\label{ux441ux43fux438ux441ux43aux438}}
+
+Юрій Клебан\\
+30/10/2022
+
+\hfill\break
 
 \bookmarksetup{startatroot}
 
-\hypertarget{summary}{%
-\chapter{Summary}\label{summary}}
-
-In summary, this book has no content whatsoever.
-
-\bookmarksetup{startatroot}
-
-\hypertarget{references}{%
-\chapter*{References}\label{references}}
-\addcontentsline{toc}{chapter}{References}
+\hypertarget{ux441ux43fux438ux441ux43eux43a-ux432ux438ux43aux43eux440ux438ux441ux442ux430ux43dux438ux445-ux434ux436ux435ux440ux435ux43b}{%
+\chapter*{Список використаних
+джерел}\label{ux441ux43fux438ux441ux43eux43a-ux432ux438ux43aux43eux440ux438ux441ux442ux430ux43dux438ux445-ux434ux436ux435ux440ux435ux43b}}
+\addcontentsline{toc}{chapter}{Список використаних джерел}
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-knuth84}{}}%
-Knuth, Donald E. 1984. {``Literate Programming.''} \emph{Comput. J.} 27
-(2): 97--111. \url{https://doi.org/10.1093/comjnl/27.2.97}.
+\leavevmode\vadjust pre{\hypertarget{ref-r-cran}{}}%
+n.d. \emph{The Comprehensive R Archive Network}.
+\url{https://cran.r-project.org/}.
 
 \end{CSLReferences}
 

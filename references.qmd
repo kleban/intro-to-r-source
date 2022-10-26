@@ -1,4 +1,4 @@
-# References {.unnumbered}
+# Список використаних джерел {.unnumbered}
 
-::: {#refs}
+::: {#refs} 
 :::

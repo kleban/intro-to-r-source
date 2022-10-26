@@ -1,18 +1,54 @@
 project:
   type: book
-  output-dir: docs
+  output-dir: ..\intro-to-r\
 
 book:
-  title: "Вступ до прикладного програмування в R"
-  subtitle: "Матеріали для студентів спеціальності економічна кібернекати, 1 курс"
+  title: "Вступ до програмування в R"
+  subtitle: "Матеріали для студентів спеціальності економічна кібернетика, 1 курс"
   author: "Юрій Клебан"
   date: "12/05/2022"
+  cover-image: img/cover.png
+  site-url: https://kleban.github.io/r-intro/
+  repo-url: https://github.com/kleban/r-intro/
+  repo-branch: main
+  sharing: [twitter, facebook, linkedin]
+  favicon: img/favicon.png
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - jupyter-r.ipynb
-    - jupyter-csharp.ipynb
+    - 00-intro.qmd
+    - part: "Основи роботи в R"
+      chapters:
+        - 01-what-is-r.qmd
+        - 02-r-history.qmd
+        - 03-r-environment.qmd
+        - 04-r-help.qmd
+        - 05-r-packages.qmd
+    - part: "Базовий синтаксис R"
+      chapters: 
+        - 06-r-variables.qmd
+        - 07-r-basic-types.qmd
+        - 08-r-operators.qmd
+        - 09-userful-math.qmd
+        - 10-r-functions.qmd
+    - part: "Робота з даними у R"
+      chapters: 
+        - 11-r-vectors.qmd
+        - 12-r-data.frames.qmd
+        - 13-r-lists.qmd
+    #- part: "Читання та запис даних"
+     # chapters: 
+    #    - 14-r-csv.qmd
+    #    - 15-r-xml.qmd
+    #    - 16-r-xlsx.qmd
+    #    - 16-r-api.qmd
+    #    - 17-r-json.qmd
+    #    - 18-r-sql-sqlite.qmd
+    #    - 19-r-web-parsing.qmd
+    #- part: "Статистика в R"
+    #  chapters: 
+    #    - 20-staistics.qmd
+
+    #- summary.qmd   
     - references.qmd
   page-navigation: true
   page-footer: "Copyright 2022, Юрій Клебан" 
@@ -24,6 +60,10 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    cover-image: img/cover.png
+    code-link: true
+    css: css/style.css
+    number-sections: true
 
 
 

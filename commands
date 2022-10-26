@@ -1,12 +1,9 @@
-tlmgr install lwarp
-tlmgr install oberdiek
 
-
-# cd e:\repos\oa_2023\intro-to-r
+# cd e:\repos\oa_2023\intro-to-r-source
 # quarto create-project . --type book
 quarto preview .
 quarto render .
-quarto publish gh-pages
+
 
 1. Render
 2. Pull to github

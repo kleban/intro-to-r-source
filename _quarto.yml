@@ -6,7 +6,7 @@ book:
   title: "Вступ до програмування в R"
   subtitle: "Матеріали для студентів спеціальності економічна кібернетика, 1 курс"
   author: "Юрій Клебан"
-  date: "12/05/2022"
+  date: "`r Sys.Date()`"
   cover-image: img/cover.png
   site-url: https://kleban.github.io/r-intro/
   repo-url: https://github.com/kleban/r-intro/
@@ -23,18 +23,21 @@ book:
         - 03-r-environment.qmd
         - 04-r-help.qmd
         - 05-r-packages.qmd
+        - 06-r-input-output.qmd
     - part: "Базовий синтаксис R"
       chapters: 
-        - 06-r-variables.qmd
-        - 07-r-basic-types.qmd
-        - 08-r-operators.qmd
-        - 09-userful-math.qmd
-        - 10-r-functions.qmd
+        - 07-r-variables.qmd
+        - 08-r-basic-types.qmd
+        - 09-r-operators.qmd
+        - 10-userful-math.qmd
+        - 11-r-functions.qmd
     - part: "Робота з даними у R"
       chapters: 
         - 11-r-vectors.qmd
         - 12-r-data.frames.qmd
         - 13-r-lists.qmd
+    - tasks.qmd
+    - solved-tasks.qmd
     #- part: "Читання та запис даних"
      # chapters: 
     #    - 14-r-csv.qmd

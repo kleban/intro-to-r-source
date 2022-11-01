@@ -1,0 +1,15 @@
+---
+author: "Юрій Клебан"
+date: "`r Sys.Date()`"
+format:
+  html:
+    toc: true
+language: _language-ua.yml 
+---
+
+# [-] Приклади розв'язання задач {.unnumbered}
+
+
+
+
+
